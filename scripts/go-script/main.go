@@ -29,13 +29,20 @@ func main() {
 	fmt.Printf("st: %+v\n", st)
 
 	req := sdk.OptionalExamplesPostRequestBody{
-		Primitive:         "primitiveValue",
-		OptionalPrimitive: st,
+		Primitive:              "primitiveValue",
+		OptionalPrimitive:      sdk.String("optionalPrimitiveValue"),
+		NamedPrimitive:         "NamedPrimitiveValue",
+		NamedOptionalPrimitive: sdk.String("OptionalNamedPrimitiveValue"),
 		Foo: &sdk.Foo{
 			FooName:  "fooName",
 			FooValue: "fooValue",
 		},
-		NamedPrimitive: sdk.String("namedPrimitiveValue"),
+		FooOptional: &sdk.Foo{
+			FooName: "fooName",
+		},
+		FooNullable: &sdk.Foo{
+			FooName: "fooName",
+		},
 	}
 	fmt.Printf("req: %+v\n", req)
 
