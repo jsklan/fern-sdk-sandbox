@@ -16,6 +16,13 @@ service:
       method: GET
       path: /simple-get
       response: SimpleGetResponse
+    
+    optionalExamplesPost:
+      docs: Example post request with optional fields
+      method: POST
+      path: /optional-examples-post
+      request: OptionalExamplesPostRequest
+      response: OptionalExamplesPostResponse
 
 types:
   SimplePostRequest:
@@ -25,13 +32,52 @@ types:
 
   SimplePostResponse:
     properties:
-      key: string
-      value: string
+      success: boolean
 
   SimpleGetResponse:
     properties:
-      key: string
-      value: string
+      success: boolean
+  
+  Foo:
+    properties:
+      fooName: string
+      fooValue: string
+  
+  Bar:
+    properties:
+      primitive: string
+      optionalPrimitive: optional<string>
+      nullablePrimitive: nullable<string>
+      optionalNullablePrimitive: optional<nullable<string>>
+      # nullableOptionalPrimitive: nullable<optional<string>>
+      foo: Foo
+      fooOptional: optional<Foo>
+      fooNullable: nullable<Foo>
+      fooOptionalNullable: optional<nullable<Foo>>
+      # fooNullableOptional: nullable<optional<Foo>>
+
+  OptionalExamplesPostRequest:
+    properties:
+      primitive: string
+      optionalPrimitive: optional<string>
+      nullablePrimitive: nullable<string>
+      optionalNullablePrimitive: optional<nullable<string>>
+      # nullableOptionalPrimitive: nullable<optional<string>>
+      foo: Foo
+      fooOptional: optional<Foo>
+      fooNullable: nullable<Foo>
+      fooOptionalNullable: optional<nullable<Foo>>
+      # fooNullableOptional: nullable<optional<Foo>>
+      bar: Bar
+      barOptional: optional<Bar>
+      barNullable: nullable<Bar>
+      barOptionalNullable: optional<nullable<Bar>>
+      # barNullableOptional: nullable<optional<Bar>>
+
+  OptionalExamplesPostResponse:
+    properties:
+      success: boolean
+
 
 errors:
   SandboxError:
