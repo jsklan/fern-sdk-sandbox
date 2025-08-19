@@ -8,7 +8,10 @@ service:
       docs: Example post request
       method: POST
       path: /simple-post
-      request: SimplePostRequest
+      request:
+        body: SimplePostRequestBody
+        content-type: application/json
+        name: SimplePostRequest
       response: SimplePostResponse
 
     simpleGet:
@@ -21,11 +24,14 @@ service:
       docs: Example post request with optional fields
       method: POST
       path: /optional-examples-post
-      request: OptionalExamplesPostRequest
+      request:
+        body: OptionalExamplesPostRequestBody
+        content-type: application/json
+        name: OptionalExamplesPostRequest
       response: OptionalExamplesPostResponse
 
 types:
-  SimplePostRequest:
+  SimplePostRequestBody:
     properties:
       key: string
       value: string
@@ -37,7 +43,18 @@ types:
   SimpleGetResponse:
     properties:
       success: boolean
-  
+
+  NamedPrimitive:
+    type: string
+  NamedOptionalPrimitive:
+    type: optional<string>
+  NamedNullablePrimitive:
+    type: nullable<string>
+  NamedOptionalNullablePrimitive:
+    type: optional<nullable<string>>
+  NamedNullableOptionalPrimitive:
+    type: nullable<optional<string>>
+
   Foo:
     properties:
       fooName: string
@@ -56,7 +73,7 @@ types:
       fooOptionalNullable: optional<nullable<Foo>>
       fooNullableOptional: nullable<optional<Foo>>
 
-  OptionalExamplesPostRequest:
+  OptionalExamplesPostRequestBody:
     properties:
       primitive: string
       optionalPrimitive: optional<string>
@@ -73,6 +90,11 @@ types:
       barNullable: nullable<Bar>
       barOptionalNullable: optional<nullable<Bar>>
       barNullableOptional: nullable<optional<Bar>>
+      namedPrimitive: NamedPrimitive
+      namedOptionalPrimitive: NamedOptionalPrimitive
+      namedNullablePrimitive: NamedNullablePrimitive
+      namedOptionalNullablePrimitive: NamedOptionalNullablePrimitive
+      namedNullableOptionalPrimitive: NamedNullableOptionalPrimitive
 
   OptionalExamplesPostResponse:
     properties:
