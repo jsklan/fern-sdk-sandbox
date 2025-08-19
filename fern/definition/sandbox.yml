@@ -49,12 +49,12 @@ types:
       optionalPrimitive: optional<string>
       nullablePrimitive: nullable<string>
       optionalNullablePrimitive: optional<nullable<string>>
-      # nullableOptionalPrimitive: nullable<optional<string>>
+      nullableOptionalPrimitive: nullable<optional<string>>
       foo: Foo
       fooOptional: optional<Foo>
       fooNullable: nullable<Foo>
       fooOptionalNullable: optional<nullable<Foo>>
-      # fooNullableOptional: nullable<optional<Foo>>
+      fooNullableOptional: nullable<optional<Foo>>
 
   OptionalExamplesPostRequest:
     properties:
@@ -62,17 +62,17 @@ types:
       optionalPrimitive: optional<string>
       nullablePrimitive: nullable<string>
       optionalNullablePrimitive: optional<nullable<string>>
-      # nullableOptionalPrimitive: nullable<optional<string>>
+      nullableOptionalPrimitive: nullable<optional<string>>
       foo: Foo
       fooOptional: optional<Foo>
       fooNullable: nullable<Foo>
       fooOptionalNullable: optional<nullable<Foo>>
-      # fooNullableOptional: nullable<optional<Foo>>
+      fooNullableOptional: nullable<optional<Foo>>
       bar: Bar
       barOptional: optional<Bar>
       barNullable: nullable<Bar>
       barOptionalNullable: optional<nullable<Bar>>
-      # barNullableOptional: nullable<optional<Bar>>
+      barNullableOptional: nullable<optional<Bar>>
 
   OptionalExamplesPostResponse:
     properties:
