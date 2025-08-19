@@ -1,0 +1,39 @@
+# yaml-language-server: $schema=https://raw.githubusercontent.com/fern-api/fern/main/fern.schema.json
+
+service:
+  auth: false
+  base-path: /sandbox
+  endpoints:
+    simplePost:
+      docs: Example post request
+      method: POST
+      path: /simple-post
+      request: SimplePostRequest
+      response: SimplePostResponse
+
+    simpleGet:
+      docs: Example get request
+      method: GET
+      path: /simple-get
+      response: SimpleGetResponse
+
+types:
+  SimplePostRequest:
+    properties:
+      key: string
+      value: string
+
+  SimplePostResponse:
+    properties:
+      key: string
+      value: string
+
+  SimpleGetResponse:
+    properties:
+      key: string
+      value: string
+
+errors:
+  SandboxError:
+    status-code: 404
+    type: string
